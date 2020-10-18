@@ -106,8 +106,7 @@ MemoryLeakWarningPlugin::MemoryLeakWarningPlugin(const SimpleString& name,
 {
 	if (firstPlugin == 0) firstPlugin = this;
 
-	if (localDetector) memLeakDetector = localDetector;
-	else memLeakDetector = getGlobalDetector();
+	memLeakDetector = (localDetector ? localDetector : getGlobalDetector());
 
 	memLeakDetector->enable();
 }
