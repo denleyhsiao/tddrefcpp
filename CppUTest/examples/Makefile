@@ -11,7 +11,7 @@
 COMPONENT_NAME = CppUTestExamples
 TARGET_LIB = \
 	lib/lib$(COMPONENT_NAME).a
-	
+
 TEST_TARGET = \
 	$(COMPONENT_NAME)_tests
 
@@ -34,14 +34,14 @@ CPPFLAGS += -g
 SRC_DIRS = \
 	ApplicationLib
 
-#TEST_SRC_DIRS is a list of directories including 
+#TEST_SRC_DIRS is a list of directories including
 # - A test main (AllTests.cpp by conventin)
 # - OBJ files in these directories are included in the TEST_TARGET
 # - Consequently - AllTests.h containing the IMPORT_TEST_GROUPS is not needed
 TEST_SRC_DIRS = \
 	AllTests
 
-#includes for all compiles	
+#includes for all compiles
 INCLUDES =\
   -I.\
   -IApplicationLib\
@@ -50,7 +50,5 @@ INCLUDES =\
 #Flags to pass to ld
 LDFLAGS +=
 LD_LIBRARIES = -lstdc++
-	
+
 include $(CPPUTEST_HOME)/build/ComponentMakefile
-
-

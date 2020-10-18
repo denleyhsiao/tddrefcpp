@@ -1,5 +1,0 @@
-!define TEST_SYSTEM {slim}
-!define COMMAND_PATTERN {../CSlim/CSlim_Server}
-
->DivisionExample
->ScriptExample

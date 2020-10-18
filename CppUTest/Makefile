@@ -23,7 +23,7 @@ ENABLE_DEBUG = Y
 COMPONENT_NAME = CppUTest
 TARGET_LIB = \
 	lib/lib$(COMPONENT_NAME).a
-	
+
 TEST_TARGET = \
 	$(COMPONENT_NAME)_tests
 
@@ -51,27 +51,27 @@ endif
 SRC_DIRS = \
 	src/CppUTest \
 	src/Platforms/$(CPP_PLATFORM)
-	
-#TEST_SRC_DIRS is a list of directories including 
+
+#TEST_SRC_DIRS is a list of directories including
 # - A test main (AllTests.cpp by convention)
 # - OBJ files in these directories are included in the TEST_TARGET
 # - Consequently - AllTests.h containing the IMPORT_TEST_GROUPS is not needed
-# - 
+# -
 TEST_SRC_DIRS = \
 	tests
 
-#includes for all compiles	
+#includes for all compiles
 INCLUDES =\
   -I$(CPPUTEST_HOME)/include
 
 #Add extension directories if enabled
 ifeq ($(ENABLE_EXTENSIONS), Y)
 SRC_DIRS +=	src/CppUTest/Extensions
-TEST_SRC_DIRS += tests/Extensions 
+TEST_SRC_DIRS += tests/Extensions
 endif
 
 #Flags to pass to ar, ld
-LDFLAGS += 
+LDFLAGS +=
 LD_LIBRARIES += -lstdc++
 
 include $(CPPUTEST_HOME)/build/ComponentMakefile
@@ -91,11 +91,10 @@ test_all:
 	make clean
 	make CPPUTEST_DISABLE_MEMLEAKDETECTION=Y
 	make clean
-	
+
 .PHONY: examples
-examples: 
+examples:
 	make -C examples  all
-	
-cleanExamples: 
-	make -C examples clean 
-	
+
+cleanExamples:
+	make -C examples clean
